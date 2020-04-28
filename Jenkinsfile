@@ -41,11 +41,10 @@ pipeline {
 			steps {
 			sh './jenkins/deploy/deploy.sh'
 
+			}
+		
 		}
-		publishers {
-        mailer('nohierassan2@gmail.com', false, true)
-    }
-}
+
 	}
 
 }
