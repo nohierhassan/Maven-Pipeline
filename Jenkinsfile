@@ -15,22 +15,22 @@ pipeline {
 			
 			'''
 		}
-		post {
-                success {
-                   archiveArtifacts artifacts: 'maven-project/target/*.jar', fingerprint: true
-                }
-            }
+		// post {
+  //               success {
+  //                  archiveArtifacts artifacts: 'maven-project/target/*.jar', fingerprint: true
+  //               }
+  //           }
 	}
 
 		stage ('test') {
 			steps{ 
 			sh './jenkins/test/test.sh mvn test'
 		}
-		post {
-                always {
-                    junit 'maven-project/target/surefire-reports/*.xml'
-                }
-            }
+		// post {
+  //               always {
+  //                   junit 'maven-project/target/surefire-reports/*.xml'
+  //               }
+  //           }
 	}
 		stage('push') {
 			steps {
